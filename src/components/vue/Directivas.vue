@@ -13,7 +13,6 @@ const isChecked = ref(true);
 
 const isOpen = ref(false)
 const buttonClass = ref('bg-blue-500 text-white')
-const buttonText = ref('Mostrar opciones')
 
 const objetos = ref([{code:'192205', name:'Charis'}, {code:'192203', name:'Guevara'}, {code:'192222', name:'Mamian'} ])
 
@@ -21,43 +20,22 @@ const colortext = ref('text-red')
 const hasError = ref(true);
 
 
-
-
-
-
-
 function toggleDropdown() {
-  isOpen.value = !isOpen.value
-  if (isOpen.value) {
-    buttonClass.value = 'bg-red-500 text-white'
-    buttonText.value = 'Ocultar opciones'
-  } else {
-    buttonClass.value = 'bg-blue-500 text-white'
-    buttonText.value = 'Mostrar opciones'
-  }
-}
-
-function add () {
-    todos.value.unshift(todo.value)
-    todo.value= ''
-}
+ isOpen.value = !isOpen.value
+if (isOpen.value) { 
+buttonClass.value = 'bg-violet-300 text-white'
+   
+} else {
+buttonClass.value = 'bg-violet-500 text-white'
     
+}}
+function add () {
+ todos.value.unshift(todo.value)
+todo.value= '' }
 
 </script>
 
 <template>
-
-     <div class="px-5 py-6 rounded shadow bg-slate-200 max-w-96 mx-auto  mt-10">
-        <button @click="toggleDropdown":class="buttonClass"class="px-4 py-2 rounded focus:outline-none">{{ buttonText }}</button>
-    <div v-if="isOpen">
-      <div class=" mt-1 px-1">
-        <p class="block px-4 py-2 text-sm text-gray-700  mt-1 bg-violet-300 rounded">Opción 1</p>
-        <p class="block px-4 py-2 text-sm text-gray-700  mt-1 bg-violet-300 rounded">Opcion 2</p>
-        <p class="block px-4 py-2 text-sm text-gray-700  mt-1 bg-violet-300 rounded">Opción 3</p>
-      </div>
-    </div>
-  </div>
-
 
     <div class="px-5 py-6 rounded shadow bg-slate-200 max-w-96 mx-auto  mt-10">
         <div > 
@@ -119,11 +97,6 @@ function add () {
         <p v-bind:class="{'danger' : hasError}">Este mensaje se ha enviado saticfactoriamente</p>
     </div>
 <!--PAra que se vean los numeros es la etiqueta index cuando hay valores iguales  -->
-   
+
 </template>
 
-<style>
-.danger{
-    color: rgb(255, 0, 0);
-}
-</style>
