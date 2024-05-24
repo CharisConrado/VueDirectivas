@@ -5,11 +5,21 @@ import Layout from '../layouts/Layout.astro';
 import Directivas from '../components/vue/Directivas.vue'
 import Correos from '../components/vue/Correos.vue';
 import Info from '../components/vue/Info.vue';
+import Par_impar from '../components/vue/Par_impar.vue';
+import Parking from '../components/vue/Parking.vue';
+import Tareas from '../components/vue/Tareas.vue';
 
 ---
 
 <Layout title="Welcome to Astro.">
    <!--<Directives client:load /><Directives client:load></Directives>-->
+
+<div class="my-10">
+   <Tareas client:load/>
+</div>
+   
+   <Par_impar client:load/>
+   <Parking client:load/>
    <div class="bg-zinc-400 py-10">
       <Correos title='Correo1' text='Informacion correo 1' time='Hace 2 horas' client:load/>
       <Correos title='Correo1' text='Informacion correo 1' time='Hace 2 horas' client:load/>
