@@ -1,37 +1,40 @@
 <script setup>
 
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
-const todos = ref([]);
-const todo = ref('')
+    const todos = ref([]);
+    const todo = ref('')
 
-const age = 14;
+    const age = 14;
 
-const countries = ref(["Colombia", "Venezuela", "Puerto Rico", "Dominicana"]);
+    const countries = ref(["Colombia", "Venezuela", "Puerto Rico", "Dominicana"]);
 
-const isChecked = ref(true);
+    const isChecked = ref(true);
 
-const isOpen = ref(false)
-const buttonClass = ref('bg-blue-500 text-white')
+    const isOpen = ref(false)
+    const buttonClass = ref('bg-blue-500 text-white')
 
-const objetos = ref([{code:'192205', name:'Charis'}, {code:'192203', name:'Guevara'}, {code:'192222', name:'Mamian'} ])
+    const objetos = ref([{code:'192205', name:'Charis'}, {code:'192203', name:'Guevara'}, {code:'192222', name:'Mamian'} ])
 
-const colortext = ref('text-red')
-const hasError = ref(true);
+    const colortext = ref('text-red')
+    const hasError = ref(true);
 
 
-function toggleDropdown() {
- isOpen.value = !isOpen.value
-if (isOpen.value) { 
-buttonClass.value = 'bg-violet-300 text-white'
-   
-} else {
-buttonClass.value = 'bg-violet-500 text-white'
+    function toggleDropdown() {
+    isOpen.value = !isOpen.value
+    if (isOpen.value) { 
+    buttonClass.value = 'bg-violet-300 text-white'
     
-}}
-function add () {
- todos.value.unshift(todo.value)
-todo.value= '' }
+    } else {
+    buttonClass.value = 'bg-violet-500 text-white'
+        
+    }}
+    function add () {
+    todos.value.unshift(todo.value)
+    todo.value= '' }
+    function del(){
+        todos.value = [];
+    }
 
 </script>
 

@@ -3,12 +3,20 @@ import Layout from '../layouts/Layout.astro';
 //import Directives from '../components/vue/Directives.vue';
 //import v-if from '../components/vue/v-if.vue';
 import Directivas from '../components/vue/Directivas.vue'
+import Correos from '../components/vue/Correos.vue';
+import Info from '../components/vue/Info.vue';
 
 ---
 
 <Layout title="Welcome to Astro.">
    <!--<Directives client:load /><Directives client:load></Directives>-->
+   <div class="bg-zinc-400 py-10">
+      <Correos title='Correo1' text='Informacion correo 1' time='Hace 2 horas' client:load/>
+      <Correos title='Correo1' text='Informacion correo 1' time='Hace 2 horas' client:load/>
+      <Correos title='Correo1' text='Informacion correo 1' time='Hace 2 horas' client:load/>
+   </div>
    <Directivas client:load></Directivas>
+   <Info title='Informacion' information='Te amo mucho mucho mucho' client:load/>
    
 </Layout>
 
